@@ -1,4 +1,4 @@
-# :hamburger: EAT-DA-BURGER - Sequelize :hamburger:
+# :hamburger: EAT-DA-BURGER - Sequelize'd Edition :hamburger:
 
 ### Overview
 ***
@@ -14,7 +14,7 @@ Your app will store every burger in a database, whether devoured or not.
 ### Let's go! 
 ***
 
-Want to order a burger and devour it from EAT-DA-BURGER? No worries.... Click [here](https://eat-da-burger1464.herokuapp.com/). 
+Want to order a burger and devour it from EAT-DA-BURGER? No worries.... Click [here](https://eat-da-burger1465.herokuapp.com/). 
 
 #### Author:
 ***
@@ -28,11 +28,13 @@ Michael Bizzle - [GitHub](https://github.com/mbizzle1464)
 * Express
 * MySql
 * Handlebars
-* Object Relational Mapping (ORM)
+* Sequelize
 * Model View Controller (MVC) Design
 * npm packages
+    * mysql2
+    * sequelize
     * body-parser
     * express
     * express-handlebars
     * method-override
-    * mysql
+
