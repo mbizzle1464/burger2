@@ -1,0 +1,108 @@
+<div class="jumbotron">
+    <h1>EAT-DA-BURGER
+        <img class="center img-responsive" src="/assets/img/burger.png" alt="Burger">
+    </h1>
+</div>
+
+<div class="row">
+    <div class="col-lg-2">
+
+    </div>
+    <div class="col-lg-4">
+        <h4>
+            #1 Single Hamburger......................$5.99
+            <br> #2 Double Hamburger......................$6.99
+            <br> #3 Triple Hamburger......................$7.99
+            <br>
+        </h4>
+    </div>
+    <div class="col-lg-4">
+        <h4>
+            #4 Single Cheeseburger......................$6.50
+            <br> #5 Double Cheeseburger......................$7.50
+            <br> #6 Triple Cheeseburger......................$8.50
+            <br>
+        </h4>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+
+</div>
+
+<div class="row">
+    <div id="add">
+        <h2>ORDER A BURGER</h2>
+        <form class="create-update-form" action="/" method="POST">
+
+            <div class="form-group">
+                <label for="ca">Select a burger from the menu.</label>
+                <select class="form form-control" type="text" id="ca" name="burger_name">
+                    <option>Single Hamburger</option>
+                    <option>Double Hamburger</option>
+                    <option>Triple Hamburger</option>
+                    <option>Single Cheeseburger</option>
+                    <option>Double Cheeseburger</option>
+                    <option>Triple Cheeseburger</option>
+                </select>
+                <label for="ca">Your Name</label>
+                <input class="form form-control" type="text" id="ca" name="person_name">
+            </div>
+
+            <button class="btn btn-warning" type="submit">ORDER DA-BURGER!</button>
+        </form>
+
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-lg-2">
+
+    </div>
+    <div class="col-lg-4">
+        <div id="new">
+            <h2>BURGER READY TO EAT</h2>
+
+
+            <ul>
+                {{#each burger}} {{#unless this.devoured}}
+                <li>
+                    <strong>Order Number:</strong> #{{this.id}}
+                    <br>
+                    <strong>Burger Ordered:</strong> {{this.burger_name}}
+                    <br>
+                    <strong>Ordered by:</strong> {{this.person_name}}
+                    <br>
+
+                    <form action="/{{this.id}}?_method=PUT" method="POST">
+                        <input type="hidden" name="devoured" value="true">
+                        <button class="btn btn-danger" type="submit">EAT-DA-BURGER, {{this.person_name}}!</button>
+                    </form>
+
+                </li>
+                {{/unless}} {{/each}}
+            </ul>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div id="devour">
+            <h2>BURGERS DEVOURED</h2>
+
+            <ul>
+                {{#each burger}} {{#if this.devoured}}
+                <li>
+                    <strong>Order Number:</strong> #{{this.id}}
+                    <br>
+                    <strong>Burger Devoured:</strong> {{this.burger_name}}
+                    <br>
+                    <strong>Eaten by:</strong> {{this.person_name}}
+                    <br>
+
+                </li>
+                {{/if}} {{/each}}
+            </ul>
+        </div>
+    </div>
+    <div class="col-lg-2">
+    </div>
+</div>
